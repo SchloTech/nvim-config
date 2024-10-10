@@ -6,6 +6,6 @@ return {
 			style = "warmer",
 		})
 		require("onedark").load()
-    vim.cmd.colorscheme "onedark"
+    -- vim.cmd.colorscheme "onedark"
 	end,
 }
