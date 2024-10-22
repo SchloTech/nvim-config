@@ -5,6 +5,14 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set number")
 vim.cmd("set relativenumber")
 vim.cmd("set cursorline")
+vim.cmd([[
+  augroup AutoSave
+    autocmd!
+    autocmd InsertLeave,TextChanged * silent! wall
+  augroup END
+]])
+
+
 vim.g.mapleader = " "
 
 vim.opt.swapfile = false
