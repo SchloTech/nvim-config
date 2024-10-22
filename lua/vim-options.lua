@@ -12,7 +12,6 @@ vim.cmd([[
   augroup END
 ]])
 
-
 vim.g.mapleader = " "
 
 vim.opt.swapfile = false
