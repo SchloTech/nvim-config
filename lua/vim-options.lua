@@ -14,6 +14,7 @@ vim.cmd([[
 vim.g.mapleader = " "
 
 vim.opt.swapfile = false
+vim.opt.clipboard:prepend { 'unnamed', 'unnamedplus' }
 
 -- Navigate vim panes better
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
