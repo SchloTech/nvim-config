@@ -11,7 +11,6 @@ vim.cmd([[
     autocmd InsertLeave,TextChanged * silent! wall
   augroup END
 ]])
-
 vim.g.mapleader = " "
 
 vim.opt.swapfile = false
