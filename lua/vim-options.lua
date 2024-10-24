@@ -15,6 +15,18 @@ vim.g.mapleader = " "
 
 vim.opt.swapfile = false
 vim.opt.clipboard:prepend { 'unnamed', 'unnamedplus' }
+vim.g.clipboard = {
+    name = 'win32yank',
+    copy = {
+        ['+'] = 'clip.exe',
+        ['*'] = 'clip.exe',
+    },
+    paste = {
+        ['+'] = 'powershell.exe Get-Clipboard',
+        ['*'] = 'powershell.exe Get-Clipboard',
+    },
+    cache_enabled = 0,
+}
 
 -- Navigate vim panes better
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
