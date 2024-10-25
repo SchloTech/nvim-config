@@ -17,14 +17,26 @@ vim.opt.swapfile = false
 vim.opt.clipboard:prepend { 'unnamed', 'unnamedplus' }
 -- uncomment out this section if you have trouble yanking to windows system clipboard
 --vim.g.clipboard = {
---   name = 'win32yank',
+--    name = 'win32yank',
 --    copy = {
 --        ['+'] = 'clip.exe',
 --        ['*'] = 'clip.exe',
 --    },
 --    paste = {
---        ['+'] = 'powershell.exe Get-Clipboard',
---        ['*'] = 'powershell.exe Get-Clipboard',
+--        ['+'] = function()
+--            local lines = vim.fn.systemlist('powershell.exe Get-Clipboard')
+--            for i, line in ipairs(lines) do
+--                lines[i] = line:gsub('\r', '') -- Remove carriage returns
+--            end
+--            return lines
+--        end,
+--        ['*'] = function()
+--            local lines = vim.fn.systemlist('powershell.exe Get-Clipboard')
+--            for i, line in ipairs(lines) do
+--                lines[i] = line:gsub('\r', '') -- Remove carriage returns
+--            end
+--            return lines
+--        end,
 --    },
 --    cache_enabled = 0,
 --}
